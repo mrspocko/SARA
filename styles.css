@@ -1,0 +1,711 @@
+:root {
+    --color-primario: #00bcd4; /* Azul Cian/Turquesa del logo */
+    --color-secundario: #1a1a1a;
+    --color-texto-claro: #f5f5f5;
+    --color-fondo-oscuro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-claro);
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--color-primario);
+}
+
+/* --- Estilos de la Barra de Navegación (Header) --- */
+.header {
+    background-color: var(--color-fondo-oscuro);
+    padding: 8px 5%; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 189, 212, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 56px; 
+}
+
+.nav {
+    margin-left: 220px; 
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: absolute; 
+    left: 5%; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 1001; 
+}
+
+.logo-text {
+    text-align: center; 
+}
+
+.logo-container img {
+    height: 180px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-texto-claro);
+    margin-bottom: 0; 
+    line-height: 1;
+}
+
+.logo-text p {
+    font-size: 0.7rem;
+    color: var(--color-primario);
+    margin-top: 0px; 
+}
+
+.nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.nav a:hover {
+    color: var(--color-primario);
+}
+
+/* Estilo Delineado para Iniciar Sesión */
+.login-button {
+    color: var(--color-primario) !important;
+    border: 2px solid var(--color-primario);
+    background-color: transparent;
+    padding: 8px 20px !important; 
+    font-size: 1rem;
+}
+
+.login-button:hover {
+    background-color: rgba(0, 189, 212, 0.1);
+    color: var(--color-texto-claro) !important;
+}
+
+
+/* Estilo para el botón CTA */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-fondo-oscuro) !important; 
+    padding: 10px 20px !important; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #00e5ff;
+    transform: translateY(-2px);
+    color: var(--color-fondo-oscuro);
+}
+
+/* Icono de Hamburguesa para Móviles */
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 10px;
+    color: var(--color-primario);
+}
+
+/* --- Sección Principal (Hero) --- */
+.hero {
+    position: relative;
+    height: 90vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    overflow: hidden;
+    padding: 0 5%;
+}
+
+/* Gradiente para Hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.7), rgba(0, 189, 212, 0.2));
+    z-index: 1;
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; 
+    z-index: 0; 
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); 
+    border-radius: 8px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* Ajuste del botón CTA principal para que sea más grande */
+.hero .cta-button {
+    padding: 15px 30px !important;
+    font-size: 1.1rem;
+}
+
+
+/* --- Sección de Características --- */
+.features {
+    padding: 80px 5%;
+    text-align: center;
+    background-color: var(--color-secundario);
+}
+
+.features h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--color-primario);
+}
+
+.feature-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex-basis: calc(33% - 20px);
+    padding: 30px;
+    border: 1px solid rgba(0, 189, 212, 0.2);
+    border-radius: 10px;
+    background-color: #101010;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 189, 212, 0.1);
+}
+
+.feature-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color-texto-claro);
+}
+
+/* --- Sección de Beneficios --- */
+.benefits {
+    padding: 80px 5%;
+    background-color: var(--color-fondo-oscuro); 
+    text-align: center;
+}
+
+.benefits h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--color-texto-claro);
+}
+
+.benefit-box-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.benefit-box {
+    flex-basis: calc(33% - 20px);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--color-secundario);
+    box-shadow: 0 5px 15px rgba(0, 189, 212, 0.1);
+    text-align: left;
+    position: relative;
+}
+
+.benefit-box i {
+    color: var(--color-primario);
+    font-size: 2rem;
+    margin-right: 15px;
+    transition: color 0.3s, transform 0.3s; 
+}
+
+.benefit-box:hover i {
+    color: #00e5ff;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.benefit-box h4 {
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+    display: flex; 
+    align-items: center;
+}
+
+.benefit-box h4 span {
+    color: var(--color-texto-claro);
+    font-size: 1.8rem;
+}
+
+.benefit-box p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.metric {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    margin-bottom: 15px;
+    display: block;
+}
+/* --- Fin de Sección de Beneficios --- */
+
+/* --- Sección Cómo Funciona (Proceso) --- */
+.how-it-works {
+    padding: 80px 5%;
+    background-color: var(--color-secundario);
+    text-align: center;
+}
+
+.how-it-works h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--color-texto-claro);
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    flex-basis: calc(25% - 20px); 
+    padding: 30px 20px;
+    border-radius: 10px;
+    background-color: #101010;
+    position: relative;
+}
+
+.step-item h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.step-item .step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2e2e2e;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.step-item p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Flechas decorativas entre pasos */
+.step-item:not(:last-child)::after {
+    content: "\f061"; /* Icono de flecha derecha (requiere Font Awesome) */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    color: var(--color-primario);
+    font-size: 1.5rem;
+    z-index: 3;
+}
+
+/* Ocultar flechas en móviles (Media Query más abajo) */
+
+/* --- Sección de Testimonios --- */
+.testimonials {
+    padding: 80px 5%;
+    background-color: var(--color-fondo-oscuro);
+    text-align: center;
+}
+
+.testimonials h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--color-texto-claro);
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    flex-basis: calc(33% - 20px);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--color-secundario);
+    border-left: 5px solid var(--color-primario);
+    text-align: left;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-item blockquote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--color-primario);
+}
+
+.author-info strong {
+    display: block;
+    font-weight: 700;
+    color: var(--color-texto-claro);
+}
+
+.author-info span {
+    font-size: 0.9rem;
+    color: var(--color-primario);
+}
+
+.case-study {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: #101010;
+    border-radius: 10px;
+    border: 1px solid var(--color-primario);
+}
+
+.case-study h4 {
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    margin-bottom: 15px;
+}
+
+.case-metrics {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-item .value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #00e5ff;
+    display: block;
+}
+
+.metric-item .label {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* --- Sección de Precios/Planes --- */
+.pricing {
+    padding: 80px 5%;
+    background-color: var(--color-secundario);
+    text-align: center;
+}
+
+.pricing h3 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--color-primario);
+}
+
+.price-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.price-table th, .price-table td {
+    padding: 20px 15px;
+    border: 1px solid rgba(0, 189, 212, 0.1);
+}
+
+.price-table thead th {
+    background-color: var(--color-primario);
+    color: var(--color-fondo-oscuro);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.price-table tbody tr:nth-child(odd) {
+    background-color: #101010;
+}
+
+.price-table tbody tr:nth-child(even) {
+    background-color: var(--color-fondo-oscuro);
+}
+
+.price-table .plan-name {
+    font-weight: 800;
+    color: var(--color-primario);
+    text-align: left;
+}
+
+.price-table .plan-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-texto-claro);
+}
+
+/* --- Botón Flotante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; 
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px; 
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 30px 5%;
+    background-color: var(--color-fondo-oscuro);
+    border-top: 1px solid rgba(0, 189, 212, 0.2);
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer a {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+/* ======================================================= */
+/* MEDIA QUERIES PARA RESPONSIVE (MÓVILES) */
+/* ======================================================= */
+@media (max-width: 1000px) {
+
+    /* Navbar y Hamburguesa */
+    .nav {
+        display: none; 
+        position: absolute;
+        top: 56px; 
+        right: 0;
+        width: 100%;
+        background-color: var(--color-secundario);
+        flex-direction: column;
+        padding: 20px 0;
+        border-top: 1px solid rgba(0, 189, 212, 0.2);
+        margin-left: 0;
+    }
+
+    .nav.open {
+        display: flex; 
+    }
+
+    .nav a {
+        margin: 10px 0;
+        padding: 15px 5%;
+        border-radius: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav a:not(.login-button) {
+         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo-container {
+        position: static;
+        transform: none;
+        justify-content: flex-start;
+        flex-grow: 1;
+    }
+
+    .header {
+        justify-content: space-between;
+        padding: 8px 5%;
+    }
+
+    .menu-toggle {
+        display: block; 
+        margin-left: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        text-align: center;
+        justify-content: flex-start;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Grids (Características, Beneficios, Testimonios) */
+    .feature-item, .benefit-box, .testimonial-item {
+        flex-basis: 100%; 
+    }
+    
+    /* Proceso */
+    .step-item {
+        flex-basis: 80%;
+        margin-bottom: 40px;
+    }
+
+    .step-item:not(:last-child)::after {
+        content: none;
+    }
+
+    .case-metrics {
+        flex-direction: column;
+    }
+
+    /* Tabla de precios */
+     .price-table, .price-table thead, .price-table tbody, .price-table th, .price-table td, .price-table tr { 
+         display: block; 
+     }
+
+     .price-table thead {
+         display: none; 
+     }
+
+     .price-table tr {
+         margin-bottom: 15px;
+         border: 1px solid var(--color-primario);
+         border-radius: 10px;
+         overflow: hidden;
+     }
+
+     .price-table td {
+         text-align: right;
+         position: relative;
+     }
+
+     .price-table td::before {
+         content: attr(data-label);
+         position: absolute;
+         left: 15px;
+         font-weight: 700;
+         color: var(--color-primario);
+     }
+
+     .price-table .plan-name {
+         text-align: right;
+         font-size: 1.5rem;
+         padding-top: 15px;
+         padding-bottom: 15px;
+     }
+
+     .price-table .plan-name::before {
+         content: "Plan";
+     }
+
+     .price-table .plan-price {
+         text-align: right;
+     }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+}
