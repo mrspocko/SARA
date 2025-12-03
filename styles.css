@@ -474,6 +474,14 @@ body {
 }
 
 /* --- Sección de Precios/Planes --- */
+@media ( max-width: 576 ) {
+    .price-table {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 .pricing {
     padding: 80px 5%;
     background-color: var(--color-secundario);
