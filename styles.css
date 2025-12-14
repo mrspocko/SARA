@@ -709,16 +709,31 @@ body {
         right: 20px;
     }
 }
-/* ===== HEADER SHRINK AL SCROLL ===== */
-.header {
-    transition: padding 0.3s ease, min-height 0.3s ease, background-color 0.3s ease;
+/* ===== HEADER SHRINK SOLO EN MOBILE ===== */
+@media (max-width: 1000px) {
+
+    .header {
+        transition: padding 0.3s ease, min-height 0.3s ease;
+    }
+
+    .header.shrink {
+        padding: 4px 12px;
+        min-height: 44px;
+    }
+
+    .header.shrink .logo-container img {
+        height: 30px;
+    }
+
+    .header.shrink .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .header.shrink .logo-text p {
+        font-size: 0.55rem;
+    }
 }
 
-.header.shrink {
-    padding: 4px 12px;
-    min-height: 44px;
-    background-color: rgba(0, 0, 0, 0.95);
-}
 
 /* Ajustes internos cuando hace shrink */
 .header.shrink .logo-container img {
@@ -828,3 +843,4 @@ body {
         position: sticky;
     }
 }
+
