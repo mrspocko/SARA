@@ -844,3 +844,29 @@ body {
     }
 }
 
+/* ===== DESKTOP: HEADER INMUTABLE ===== */
+@media (min-width: 1001px) {
+
+    .header,
+    .header.shrink {
+        padding: 8px 5% !important;
+        min-height: 56px !important;
+        background-color: var(--color-fondo-oscuro) !important;
+    }
+
+    .header .logo-container img,
+    .header.shrink .logo-container img {
+        height: 180px !important;
+    }
+
+    .header .logo-text h1,
+    .header.shrink .logo-text h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .header .logo-text p,
+    .header.shrink .logo-text p {
+        font-size: 0.7rem !important;
+    }
+}
+
